@@ -53,9 +53,9 @@ namespace Statistics
             }
             else
             {
-            obj.average = NaN;
-            obj.max = NaN;
-            obj.min = NaN;
+            obj.average = Double.NaN;
+            obj.max =  Double.NaN;
+            obj.min =  Double.NaN;
             }
             return obj;
             //Implement statistics here
