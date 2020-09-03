@@ -6,8 +6,8 @@ namespace Statistics
     public class Stats
     {
        public float average;
-        public float min;
         public float max;
+        public float min;
     }
     public class StatsComputer
     {
@@ -31,8 +31,8 @@ namespace Statistics
             }
             Stats obj = new Stats();
             obj.average = averageOfNumbers;
-            obj.min = minOfNumbers;
             obj.max = maxOfNumbers;
+            obj.min = minOfNumbers;
             return obj;
             //Implement statistics here
         }
