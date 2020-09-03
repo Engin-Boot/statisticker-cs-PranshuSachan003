@@ -9,20 +9,29 @@ namespace Statistics
         public float max;
         public float min;
     }
+    public float CalculateAverage(List<float> numbers)
+    {
+        float sum = 0;
+        float average;
+        for(int i=0;i<numbers.Count;i++)
+             sum=sum+numbers[i];
+         average = (float)(sum/numbers.Count);
+    }
+    public float CalculateMin(List<float> numbers)
+    {
+        float min = numbers[0];
+        for(int i=1;i<numbers.Count;i++)
+           {
+              if(numbers[i]<min)
+                 min=numbers[i];
+           }
+    }
+    
     public class StatsComputer
     {
         public Stats CalculateStatistics(List<float> numbers) {
-            double sumOfNumbers = 0;
-            float averageOfNumbers;
-            for(int i=0;i<numbers.Count;i++)
-                sumOfNumbers=sumOfNumbers+numbers[i];
-            averageOfNumbers = (float)(sumOfNumbers/numbers.Count);
-            float minOfNumbers = numbers[0];
-            for(int i=1;i<numbers.Count;i++)
-            {
-                if(numbers[i]<minOfNumbers)
-                    minOfNumbers=numbers[i];
-            }
+            float averageOfNumbers = CalculateAverage(numbers);
+            float minOfNumbers  = CalculateMin(numbers);
             float maxOfNumbers = numbers[0];
             for(int i=1;i<numbers.Count;i++)
             {
