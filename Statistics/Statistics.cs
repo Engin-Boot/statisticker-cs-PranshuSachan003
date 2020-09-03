@@ -9,7 +9,9 @@ namespace Statistics
         public float max;
         public float min;
     }
-    public float CalculateAverage(List<float> numbers)
+    public class StatsComputer
+    {
+        public float CalculateAverage(List<float> numbers)
     {
         float sum = 0;
         float average;
@@ -26,9 +28,6 @@ namespace Statistics
                  min=numbers[i];
            }
     }
-    
-    public class StatsComputer
-    {
         public Stats CalculateStatistics(List<float> numbers) {
             float averageOfNumbers = CalculateAverage(numbers);
             float minOfNumbers  = CalculateMin(numbers);
