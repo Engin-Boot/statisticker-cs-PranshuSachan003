@@ -34,8 +34,6 @@ namespace Statistics
             obj.min = minOfNumbers;
             obj.max = maxOfNumbers;
             return obj;
-            if (double.IsNaN(average)||double.IsNaN(min)||double.IsNaN(mx))
-            throw new ArithmeticException();
             //Implement statistics here
         }
     }
