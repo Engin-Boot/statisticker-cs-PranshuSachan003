@@ -40,7 +40,7 @@ namespace Statistics
             }
         return max;
     }
-        public Stats CalculateStatistics(List<float> numbers) {
+        public Stats CalculateStatistics(List<double> numbers) {
             double averageOfNumbers = CalculateAverage(numbers);
             double minOfNumbers  = CalculateMin(numbers);
             double maxOfNumbers = CalculateMax(numbers);
