@@ -5,24 +5,24 @@ namespace Statistics
 {
     public class Stats
     {
-       public float average;
-        public float max;
-        public float min;
+       public double average;
+        public double max;
+        public double min;
     }
     public class StatsComputer
     {
-        public float CalculateAverage(List<float> numbers)
+        public double CalculateAverage(List<double> numbers)
     {
-        float sum = 0;
-        float average;
+        double sum = 0;
+        double average;
         for(int i=0;i<numbers.Count;i++)
              sum=sum+numbers[i];
-         average = (float)(sum/numbers.Count);
+         average = (double)(sum/numbers.Count);
             return average;
     }
-    public float CalculateMin(List<float> numbers)
+    public double CalculateMin(List<double> numbers)
     {
-        float min = numbers[0];
+        double min = numbers[0];
         for(int i=1;i<numbers.Count;i++)
            {
               if(numbers[i]<min)
@@ -30,9 +30,9 @@ namespace Statistics
            }
         return min;
     }
-    public float CalculateMax(List<float> numbers)
+    public double CalculateMax(List<double> numbers)
     {
-        float max = numbers[0];
+        double max = numbers[0];
             for(int i=1;i<numbers.Count;i++)
             {
                 if(numbers[i]>max)
@@ -41,9 +41,9 @@ namespace Statistics
         return max;
     }
         public Stats CalculateStatistics(List<float> numbers) {
-            float averageOfNumbers = CalculateAverage(numbers);
-            float minOfNumbers  = CalculateMin(numbers);
-            float maxOfNumbers = CalculateMax(numbers);
+            double averageOfNumbers = CalculateAverage(numbers);
+            double minOfNumbers  = CalculateMin(numbers);
+            double maxOfNumbers = CalculateMax(numbers);
             Stats obj = new Stats();
             if(numbers.Count!=0)
             {
@@ -53,9 +53,9 @@ namespace Statistics
             }
             else
             {
-            obj.average = float.NaN;
-            obj.max =  float.NaN;
-            obj.min =  float.NaN;
+            obj.average = double.NaN;
+            obj.max =  double.NaN;
+            obj.min =  double.NaN;
             }
             return obj;
             //Implement statistics here
