@@ -6,14 +6,6 @@ namespace Statistics
     public class StatsComputer
     {
         public Stats CalculateStatistics(List<float> numbers) {
-            try
-            {
-            if(numbers.Count==0)  
-            }
-            catch
-            {
-                return "numbers is empty list";
-            }
             double sum = 0;
             float average;
             for(int i=0;i<numbers.count;i++)
