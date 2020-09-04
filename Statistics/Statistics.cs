@@ -16,19 +16,16 @@ namespace Statistics
         double sum = 0;
         double average;
         for(int i=0;i<numbers.Count;i++)
-        {
-            if(!(Double.IsNaN(numbers[i])))
-             sum=sum+numbers[i];
-        }
+            sum=sum+numbers[i];
          average = (double)(sum/numbers.Count);
-            return average;
+          return average;
     }
     public double CalculateMin(List<double> numbers)
     {
         double min = numbers[0];
         for(int i=1;i<numbers.Count;i++)
            {
-              if(numbers[i]<min&&(!(Double.IsNaN(numbers[i]))))
+              if(numbers[i]<min)
                  min=numbers[i];
            }
         return min;
@@ -38,13 +35,24 @@ namespace Statistics
         double max = numbers[0];
             for(int i=1;i<numbers.Count;i++)
             {
-                if(numbers[i]>max&&(!(Double.IsNaN(numbers[i]))))
+                if(numbers[i]>max)
                     max=numbers[i];
             }
         return max;
     }
+         public List<double> ReturningListAfterRemovingNaNIfContain(List<double> numbers)
+    { 
+             List<double> number;
+            for(int i=1;i<numbers.Count;i++)
+            {
+                if(!(Double.IsNaN(numbers[i])))
+                   number.Add(numbers[i]);
+            }
+        return number;
+    }
         public Stats CalculateStatistics(List<double> numbers) {
              Stats obj = new Stats();
+            List<double> numbers = ReturningListAfterRemovingNaNIfContain(List<double> numbers)
             if(numbers.Count!=0)
             {
                 double averageOfNumbers = CalculateAverage(numbers);
