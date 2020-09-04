@@ -41,21 +41,21 @@ namespace Statistics
         return max;
     }
         public Stats CalculateStatistics(List<double> numbers) {
-            double averageOfNumbers = CalculateAverage(numbers);
-            double minOfNumbers  = CalculateMin(numbers);
-            double maxOfNumbers = CalculateMax(numbers);
-            Stats obj = new Stats();
+             Stats obj = new Stats();
             if(numbers.Count!=0)
             {
-            obj.average = averageOfNumbers;
-            obj.max = maxOfNumbers;
-            obj.min = minOfNumbers;
+                double averageOfNumbers = CalculateAverage(numbers);
+                double minOfNumbers  = CalculateMin(numbers);
+                double maxOfNumbers = CalculateMax(numbers);
+                obj.average = averageOfNumbers;
+                obj.max = maxOfNumbers;
+                obj.min = minOfNumbers;
             }
             else
             {
-            obj.average = double.NaN;
-            obj.max =  double.NaN;
-            obj.min =  double.NaN;
+               obj.average = double.NaN;
+               obj.max =  double.NaN;
+               obj.min =  double.NaN;
             }
             return obj;
             //Implement statistics here
