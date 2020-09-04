@@ -52,7 +52,7 @@ namespace Statistics
     }
         public Stats CalculateStatistics(List<double> numbers) {
              Stats obj = new Stats();
-            List<double> numbers = ReturningListAfterRemovingNaNIfContain(List<double> numbers)
+            List<double> numbers = ReturningListAfterRemovingNaNIfContain(numbers);
             if(numbers.Count!=0)
             {
                 double averageOfNumbers = CalculateAverage(numbers);
