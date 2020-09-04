@@ -11,32 +11,32 @@ namespace Statistics
     }
     public class StatsComputer
     {
-        public double CalculateAverage(List<double> numbers)
+        public double CalculateAverage(List<double> numbersListWithoutNaN)
     {
         double sum = 0;
         double average;
-        for(int i=0;i<numbers.Count;i++)
-            sum=sum+numbers[i];
-         average = (double)(sum/numbers.Count);
+        for(int i=0;i<numbersListWithoutNaN.Count;i++)
+            sum=sum+numbersListWithoutNaN[i];
+         average = (double)(sum/numbersListWithoutNaN.Count);
           return average;
     }
-    public double CalculateMin(List<double> numbers)
+    public double CalculateMin(List<double> numbersListWithoutNaN)
     {
-        double min = numbers[0];
-        for(int i=1;i<numbers.Count;i++)
+        double min = numbersListWithoutNaN[0];
+        for(int i=1;i<numbersListWithoutNaN.Count;i++)
            {
-              if(numbers[i]<min)
-                 min=numbers[i];
+              if(numbersListWithoutNaN[i]<min)
+                 min=numbersListWithoutNaN[i];
            }
         return min;
     }
-    public double CalculateMax(List<double> numbers)
+    public double CalculateMax(List<double> numbersListWithoutNaN)
     {
-        double max = numbers[0];
-            for(int i=1;i<numbers.Count;i++)
+        double max = numbersListWithoutNaN[0];
+            for(int i=1;i<numbersListWithoutNaN.Count;i++)
             {
-                if(numbers[i]>max)
-                    max=numbers[i];
+                if(numbersListWithoutNaN[i]>max)
+                    max=numbersListWithoutNaN[i];
             }
         return max;
     }
