@@ -1,27 +1,43 @@
 using System;
 using Xunit;
 using Statistics;
+using System.Collections.Generic;
 
 namespace Statistics.Test
 {
     public class StatsUnitTest
     {
         [Fact]
-        public void ReportsAverageMinMax()
+        public void ReportsAverageMinMaxNotContainingNaN()
         {
             var statsComputer = new StatsComputer();
             var computedStats = statsComputer.CalculateStatistics(
-                new List<___>{1.5, 8.9, 3.2, 4.5});
+                new List<double>{1.5, 8.9, 3.2, 4.5});
             float epsilon = 0.001F;
-            Assert.True(Math.Abs(statsComputer.average - 4.525) <= epsilon);
-            Assert.True(Math.Abs(statsComputer.max - 8.9) <= epsilon);
-            Assert.True(Math.Abs(statsComputer.min - 1.5) <= epsilon);
+            Assert.True(Math.Abs(computedStats.average - 4.525) <= epsilon);
+            Assert.True(Math.Abs(computedStats.max - 8.9) <= epsilon);
+            Assert.True(Math.Abs(computedStats.min - 1.5) <= epsilon);
         }
+         [Fact]
+        public void ReportsAverageMinMaxContainingNaN()
+        {
+            var statsComputer = new StatsComputer();
+            var computedStats = statsComputer.CalculateStatistics(
+                new List<double>{1.5, 8.9,double.NaN, 4.5});
+            float epsilon = 0.00000001F;
+            Assert.True(Math.Abs(computedStats.average - 4.96666667) <= epsilon);
+            Assert.True(Math.Abs(computedStats.max - 8.9) <= epsilon);
+            Assert.True(Math.Abs(computedStats.min - 1.5) <= epsilon);
+        }
+        [Fact]
         public void ReportsNaNForEmptyInput()
         {
             var statsComputer = new StatsComputer();
             var computedStats = statsComputer.CalculateStatistics(
-                new List<___>{});
+                new List<double>{});
+            Assert.True(Double.IsNaN(computedStats.average));
+            Assert.True(Double.IsNaN(computedStats.max));
+            Assert.True(Double.IsNaN(computedStats.min));
             //All fields of computedStats (average, max, min) must be
             //Double.NaN (not-a-number), as described in
             //https://docs.microsoft.com/en-us/dotnet/api/system.double.nan?view=netcore-3.1
