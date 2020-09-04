@@ -16,7 +16,10 @@ namespace Statistics
         double sum = 0;
         double average;
         for(int i=0;i<numbers.Count;i++)
+        {
+            if(!(Double.IsNaN(numbers[i]))
              sum=sum+numbers[i];
+        }
          average = (double)(sum/numbers.Count);
             return average;
     }
@@ -25,7 +28,7 @@ namespace Statistics
         double min = numbers[0];
         for(int i=1;i<numbers.Count;i++)
            {
-              if(numbers[i]<min)
+              if(numbers[i]<min&&(!(Double.IsNaN(numbers[i]))))
                  min=numbers[i];
            }
         return min;
@@ -35,7 +38,7 @@ namespace Statistics
         double max = numbers[0];
             for(int i=1;i<numbers.Count;i++)
             {
-                if(numbers[i]>max)
+                if(numbers[i]>max&&(!(Double.IsNaN(numbers[i]))))
                     max=numbers[i];
             }
         return max;
