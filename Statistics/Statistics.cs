@@ -20,7 +20,7 @@ namespace Statistics
             if(!(Double.IsNaN(numbers[i])))
              sum=sum+numbers[i];
         }
-         average = (double)(sum/numbers.Count);
+         average = (double)(sum/(numbers.Count-1));
             return average;
     }
     public double CalculateMin(List<double> numbers)
