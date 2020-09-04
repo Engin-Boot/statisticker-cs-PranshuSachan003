@@ -52,12 +52,12 @@ namespace Statistics
     }
         public Stats CalculateStatistics(List<double> numbers) {
              Stats obj = new Stats();
-            List<double> numbers = ReturningListAfterRemovingNaNIfContain(numbers);
-            if(numbers.Count!=0)
+            List<double> numberswithoutNaN = ReturningListAfterRemovingNaNIfContain(numbers);
+            if(numberswithoutNaN.Count!=0)
             {
-                double averageOfNumbers = CalculateAverage(numbers);
-                double minOfNumbers  = CalculateMin(numbers);
-                double maxOfNumbers = CalculateMax(numbers);
+                double averageOfNumbers = CalculateAverage(numberswithoutNaN);
+                double minOfNumbers  = CalculateMin(numberswithoutNaN);
+                double maxOfNumbers = CalculateMax(numberswithoutNaN);
                 obj.average = averageOfNumbers;
                 obj.max = maxOfNumbers;
                 obj.min = minOfNumbers;
