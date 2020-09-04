@@ -17,7 +17,7 @@ namespace Statistics
         double average;
         for(int i=0;i<numbers.Count;i++)
         {
-            if(!(Double.IsNaN(numbers[i]))
+            if(!(Double.IsNaN(numbers[i])))
              sum=sum+numbers[i];
         }
          average = (double)(sum/numbers.Count);
