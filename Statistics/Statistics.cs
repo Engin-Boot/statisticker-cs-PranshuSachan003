@@ -42,7 +42,7 @@ namespace Statistics
     }
          public List<double> ReturningListAfterRemovingNaNIfContain(List<double> numbers)
     { 
-             List<double> number;
+             List<double> number = new List<double>();;
             for(int i=1;i<numbers.Count;i++)
             {
                 if(!(Double.IsNaN(numbers[i])))
