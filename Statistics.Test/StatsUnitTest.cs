@@ -23,7 +23,7 @@ namespace Statistics.Test
         {
             var statsComputer = new StatsComputer();
             var computedStats = statsComputer.CalculateStatistics(
-                new List<double>{1.5, 8.9,NaN, 4.5});
+                new List<double>{1.5, 8.9,double.NaN, 4.5});
             float epsilon = 0.001F;
             Assert.True(Math.Abs(computedStats.average - 4.525) <= epsilon);
             Assert.True(Math.Abs(computedStats.max - 8.9) <= epsilon);
